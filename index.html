@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js"></script>
+    <title>The Roulette Game</title>
+  </head>
+  <body>
+    <section class="table" onclick="handleBet(event)">
+      <div class="cero">0</div>
+      <div class="red">3</div>
+      <div class="black">6</div>
+      <div class="red">9</div>
+      <div class="red">12</div>
+      <div class="black">15</div>
+      <div class="red">18</div>
+      <div class="red">21</div>
+      <div class="black">24</div>
+      <div class="red">27</div>
+      <div class="red">30</div>
+      <div class="black">33</div>
+      <div class="red">36</div>
+      <div class="otherBets">2 to 1</div>
+      <div class="black">2</div>
+      <div class="red">5</div>
+      <div class="black">8</div>
+      <div class="black">11</div>
+      <div class="red">14</div>
+      <div class="black">17</div>
+      <div class="black">20</div>
+      <div class="red">23</div>
+      <div class="black">26</div>
+      <div class="black">29</div>
+      <div class="red">32</div>
+      <div class="black">35</div>
+      <div class="otherBets">2 to 1</div>
+      <div class="red">1</div>
+      <div class="black">4</div>
+      <div class="red">7</div>
+      <div class="black">10</div>
+      <div class="black">13</div>
+      <div class="red">16</div>
+      <div class="red">19</div>
+      <div class="black">22</div>
+      <div class="red">25</div>
+      <div class="black">28</div>
+      <div class="black">31</div>
+      <div class="red">34</div>
+      <div class="otherBets">2 to 1</div>
+    </section>
+    <section class="options" onclick="handleBet(event)">
+      <div class="bottomBets">1st 12</div>
+      <div class="bottomBets">2nd 12</div>
+      <div class="bottomBets">3rd 12</div>
+    </section>
+    <section class="lastOptions">
+      <div class="lastBets">1 to 18</div>
+      <div class="lastBets">EVEN</div>
+      <div
+        class="lastBets"
+        onclick="betColor(event)"
+        style="color: red; font-size: 100px"
+      >
+        ♦️
+      </div>
+      <div
+        class="lastBets"
+        onclick="betColor(event)"
+        style="color: black; font-size: 100px"
+      >
+        ♦️
+      </div>
+      <div class="lastBets">ODD</div>
+      <div class="lastBets">19 to 36</div>
+    </section>
+
+    <button onclick="play()">JUEGA</button>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+body {
+    background-color: darkgreen;
+    color: white;
+}
+
+.table {
+    width: fit-content;
+    display: grid;
+    grid-template-columns: repeat(14, 1fr); 
+    grid-template-rows: repeat(3, auto); /* Crea 3 filas con altura automática */
+    border: 1px solid white;
+    font-size: 40px;
+    font-weight: 900;
+}
+
+.black, .red, .otherBets {
+    border: 1px solid white;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+.black {
+    background-color: black;
+}
+
+.red {
+    background-color: red;
+}
+
+.otherBets {
+    transform: rotate(-90deg); /* Girar elementos 90º */
+}
+
+.cero {
+    grid-row: span 3;
+    width: 100px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+.options {
+    width: fit-content;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    margin-left: 103px;
+}
+
+.bottomBets {
+    height: 80px;
+    width: 406px;
+    background-color: transparent;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    font-size: 40px;
+    font-weight: 900;
+}
+
+.lastOptions {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    width: fit-content;
+    margin-left: 103px;
+}
+
+.lastBets {
+    height: 80px;
+    width: 202px;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    font-size: 40px;
+    font-weight: 900;
+}
