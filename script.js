@@ -1,4 +1,4 @@
-var numbers = {
+let numbers = {
   0: "green",
   1: "red",
   2: "black",
@@ -38,10 +38,10 @@ var numbers = {
   36: "red",
 };
 
-var choosedNumber;
-var choosedColor;
-var generatedNumber;
-var generatedColor;
+let choosedNumber;
+let choosedColor;
+let generatedNumber;
+let generatedColor;
 
 function generateNumber() {
   generatedNumber = Math.floor(Math.random() * 37);
@@ -52,10 +52,22 @@ function generateNumber() {
 
 function handleBet(event) {
   choosedNumber = event.target.textContent;
+  let elementData = event.target.dataset.rowName;
+  console.log(elementData);
   //   choosedColor = event.target.classList.value;
 
-  console.log("has la opción: " + choosedNumber);
+  console.log("has elegido la opción: " + choosedNumber);
   return choosedColor, choosedNumber;
+}
+
+function betColor(event) {
+  choosedColor = event.target.style.color;
+  console.log("Color apostado:", choosedColor);
+}
+
+function evenOrOdd(event) {
+  let choosedOption = event.target.textContent;
+  console.log("has elegido: " + choosedOption);
 }
 
 function play() {
@@ -73,9 +85,4 @@ function play() {
   } else {
     console.log("NO HAS ACERTADO");
   }
-}
-
-function betColor(event) {
-  choosedColor = event.target.style.color;
-  console.log("Color apostado:", choosedColor);
 }

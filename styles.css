@@ -46,12 +46,12 @@ body {
     width: fit-content;
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
-    margin-left: 103px;
+    margin-left: 101px;
 }
 
 .bottomBets {
     height: 80px;
-    width: 406px;
+    width: 408px;
     background-color: transparent;
     border: 1px solid white;
     display: flex;
@@ -65,12 +65,12 @@ body {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     width: fit-content;
-    margin-left: 103px;
+    margin-left: 101px;
 }
 
 .lastBets {
     height: 80px;
-    width: 202px;
+    width: 202.5px;
     border: 1px solid white;
     display: flex;
     justify-content: center; 
