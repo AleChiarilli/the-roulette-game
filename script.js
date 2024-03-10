@@ -81,8 +81,14 @@ function evenOrOdd(event) {
 }
 
 function play() {
+  //img spin
   var img = document.querySelector(".roulette-img");
   img.style.transform += "rotate(2080deg)"; // Aplica la rotación de 360 grados
+
+  //play roulette sound
+  let mySound = new Audio("sounds/roulette-sound.wav");
+  mySound.play();
+
   console.log("Tus opciones apostadas fueron:", chosenOptions);
 
   generateNumber();
@@ -129,8 +135,18 @@ function play() {
     }
   }
 
-  if (chosenOptions.includes("1 to 18") && generatedNumber <= 18) {
+  if (
+    chosenOptions.includes("1 to 18") &&
+    generatedNumber >= 1 &&
+    generatedNumber <= 18
+  ) {
     console.log("FELICIDADES HA SALIDO UN NÚMERO DEL 1 AL 18");
+  } else if (
+    chosenOptions.includes("19 to 36") &&
+    generatedNumber >= 19 &&
+    generatedNumber <= 36
+  ) {
+    console.log("FELICIDADES HA SALIDO UN NÚMERO DEL 19 AL 36");
   }
 
   chosenOptions = [];
