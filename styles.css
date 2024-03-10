@@ -78,3 +78,21 @@ body {
     font-size: 40px;
     font-weight: 900;
 }
+
+.roulette {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 420px;
+    height: 420px;
+    border-radius: 15%;
+    position: relative;
+    overflow: hidden; /* Asegura que el fondo negro no se extienda más allá del contenedor */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo negro con opacidad */
+  }
+
+  .roulette-img {
+    width: 400px;
+    height: 400px;
+    border-radius: 15%; /* Asegura que la imagen coincida con el radio de borde del contenedor */
+  }

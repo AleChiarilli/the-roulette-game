@@ -38,9 +38,11 @@ let numbers = {
   36: "red",
 };
 
-const firstRow = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36];
-const secondRow = [2, 5, 8, 11, 14, 17, 20, 23, 26, 29, 32, 35];
-const thirdRow = [1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34];
+const rows = {
+  "first-row": [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36],
+  "second-row": [2, 5, 8, 11, 14, 17, 20, 23, 26, 29, 32, 35],
+  "third-row": [1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34],
+};
 
 let generatedNumber;
 let chosenOptions = [];
@@ -48,7 +50,12 @@ let chosenOptions = [];
 function generateNumber() {
   generatedNumber = Math.floor(Math.random() * 37);
   generatedColor = numbers[generatedNumber];
-  console.log(generatedNumber, generatedColor);
+  console.log(
+    "El número que ha salido es: " +
+      generatedNumber +
+      " de color: " +
+      generatedColor
+  );
   return generatedNumber;
 }
 
@@ -74,6 +81,8 @@ function evenOrOdd(event) {
 }
 
 function play() {
+  console.log("Tus opciones apostadas fueron:", chosenOptions);
+
   generateNumber();
 
   if (chosenOptions.includes(generatedNumber.toString())) {
@@ -108,14 +117,19 @@ function play() {
       break;
   }
 
-  if (
-    chosenOptions.includes("third-row") &&
-    thirdRow.includes(generatedNumber)
-  ) {
-    console.log("has acertado un número de la tercera fila");
+  for (const rowName in rows) {
+    if (
+      chosenOptions.includes(rowName) &&
+      rows[rowName].includes(generatedNumber)
+    ) {
+      console.log("has acertado un número de la", rowName);
+      break;
+    }
   }
 
-  console.log("Tus opciones apostadas fueron:", chosenOptions);
+  if (chosenOptions.includes("1 to 18") && generatedNumber <= 18) {
+    console.log("FELICIDADES HA SALIDO UN NÚMERO DEL 1 AL 18");
+  }
 
   chosenOptions = [];
 }
