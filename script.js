@@ -38,10 +38,12 @@ let numbers = {
   36: "red",
 };
 
-let choosedNumber;
-let choosedColor;
+const firstRow = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36];
+const secondRow = [2, 5, 8, 11, 14, 17, 20, 23, 26, 29, 32, 35];
+const thirdRow = [1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34];
+
 let generatedNumber;
-let generatedColor;
+let chosenOptions = [];
 
 function generateNumber() {
   generatedNumber = Math.floor(Math.random() * 37);
@@ -51,38 +53,60 @@ function generateNumber() {
 }
 
 function handleBet(event) {
-  choosedNumber = event.target.textContent;
-  let elementData = event.target.dataset.rowName;
-  console.log(elementData);
-  //   choosedColor = event.target.classList.value;
-
-  console.log("has elegido la opción: " + choosedNumber);
-  return choosedColor, choosedNumber;
+  const chosenOption = event.target.textContent;
+  chosenOptions.push(chosenOption);
+  console.log("has elegido la opción: " + chosenOption);
 }
 
 function betColor(event) {
-  choosedColor = event.target.style.color;
-  console.log("Color apostado:", choosedColor);
+  const chosenColor = event.target.style.color;
+  chosenOptions.push(chosenColor);
+  console.log("Color apostado:", chosenColor);
 }
 
 function evenOrOdd(event) {
-  let choosedOption = event.target.textContent;
-  console.log("has elegido: " + choosedOption);
+  const chosenOption = event.target.textContent;
+  chosenOptions.push(chosenOption);
+  console.log("has elegido: " + chosenOption);
 }
 
 function play() {
   generateNumber();
-  //apostar por número:
-  if (choosedNumber == generatedNumber) {
+
+  if (chosenOptions.includes(generatedNumber.toString())) {
     console.log("has acertado el número");
-  } else {
-    console.log("no has acertado el número");
   }
 
-  //apostar por color:
-  if (choosedColor == generatedColor) {
-    console.log("has acertado el color!!!!!");
-  } else {
-    console.log("NO HAS ACERTADO");
+  if (chosenOptions.includes(generatedColor)) {
+    console.log("has acertado el color");
   }
+
+  if (chosenOptions.includes("EVEN") && generatedNumber % 2 === 0) {
+    console.log("GANAS. HA SALIDO PAR");
+  } else if (chosenOptions.includes("ODD") && generatedNumber % 2 !== 0) {
+    console.log("GANAS. HA SALIDO IMPAR");
+  }
+
+  switch (true) {
+    case chosenOptions.includes("1st 12") &&
+      generatedNumber >= 1 &&
+      generatedNumber <= 12:
+      console.log("Ha salido un número entre 1 y 12");
+      break;
+    case chosenOptions.includes("2nd 12") &&
+      generatedNumber >= 13 &&
+      generatedNumber <= 24:
+      console.log("Ha salido un número entre 13 y 24");
+      break;
+    case chosenOptions.includes("3rd 12") &&
+      generatedNumber >= 25 &&
+      generatedNumber <= 36:
+      console.log("Ha salido un número entre 25 y 36");
+      break;
+  }
+
+  if (condition) {
+  }
+
+  console.log("Tus opciones apostadas fueron:", chosenOptions);
 }
