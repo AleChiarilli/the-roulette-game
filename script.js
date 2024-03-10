@@ -54,8 +54,11 @@ function generateNumber() {
 
 function handleBet(event) {
   const chosenOption = event.target.textContent;
+  let elementData = event.target.dataset.rowName;
+  console.log(elementData);
   chosenOptions.push(chosenOption);
-  console.log("has elegido la opción: " + chosenOption);
+  chosenOptions.push(elementData);
+  console.log("has elegido la opción: " + chosenOption + elementData);
 }
 
 function betColor(event) {
@@ -105,8 +108,14 @@ function play() {
       break;
   }
 
-  if (condition) {
+  if (
+    chosenOptions.includes("third-row") &&
+    thirdRow.includes(generatedNumber)
+  ) {
+    console.log("has acertado un número de la tercera fila");
   }
 
   console.log("Tus opciones apostadas fueron:", chosenOptions);
+
+  chosenOptions = [];
 }
