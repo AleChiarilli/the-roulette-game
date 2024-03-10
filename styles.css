@@ -124,11 +124,12 @@ body {
   }
 
 .buttonsSection {
+    align-self: center;
+    height: 177px;
     border-radius: 20px; 
     background-color: rgba(0, 0, 0, 0.5); /* Fondo negro con opacidad */
     margin-left: 100px;
     margin-top: 50px;
-    text-align: center;
   }
 
   .balance {
@@ -139,10 +140,7 @@ body {
     padding: auto;
     border-radius: 10px;
     width: 100px;
-    margin: auto;
   }
-
-  .balance p {margin: 5px 0;}
 
 .golden-btn + .golden-btn { margin-top: 1em; }
 
