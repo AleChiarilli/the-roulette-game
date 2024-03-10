@@ -81,6 +81,8 @@ function evenOrOdd(event) {
 }
 
 function play() {
+  var img = document.querySelector(".roulette-img");
+  img.style.transform += "rotate(2080deg)"; // Aplica la rotación de 360 grados
   console.log("Tus opciones apostadas fueron:", chosenOptions);
 
   generateNumber();

@@ -95,4 +95,5 @@ body {
     width: 400px;
     height: 400px;
     border-radius: 15%; /* Asegura que la imagen coincida con el radio de borde del contenedor */
+    transition: transform 4s ease;
   }
